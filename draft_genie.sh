@@ -2,7 +2,7 @@
 
 ######################
 # Requires: 
-# 	1. instances to be tagged with a key:value of backup:true to be captured for backup processing
+# 	1. instances to be tagged with a key:value of Backup:true to be captured for backup processing
 #	2. IAM established with permissions to perform EC2 tasks
 # 
 # SET SCRIPT VARS
