@@ -12,6 +12,7 @@
 #
 #
 # SET SCRIPT VARS
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
 RETENTION='30' #Retention period for AMIs, Number of days
 OWNERID=''  # Account number of image owner, i.e. OwnerId
 DATESTAMP=`date +%m-%d-%Y` # A value to make AMI Name unique
