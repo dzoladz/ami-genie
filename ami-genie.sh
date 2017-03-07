@@ -14,6 +14,7 @@
 # SET SCRIPT VARS
 RETENTION='30' #Retention period for AMIs, Number of days
 OWNERID=''  # Account number of image owner, i.e. OwnerId
+DATESTAMP=`date +%m-%d-%Y` # A value to make AMI Name unique
 #
 ######################
 
@@ -26,7 +27,7 @@ instances_to_backup=(`aws ec2 describe-instances --filters "Name=tag:Backup,Valu
 # iterate through $instances_to_backup, add 'ami-genie' as the deregister hook to check
 for i in ${instances_to_backup[@]}
 do
-NAME='AMI for instance '$i
+NAME='AMI_'$DATESTAMP' for instance '$i
 DES='Created by ami-genie script'
         aws ec2 create-image --instance-id $i --name "$NAME" --description "$DES" # --dry-run # NEED TO REMOVE DRY RUN FOR LIVE
 done
